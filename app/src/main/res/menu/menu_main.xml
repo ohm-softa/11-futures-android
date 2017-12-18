@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="de.fhro.inf.prg3.a11.MainActivity" >
+
+    <item
+        android:id="@+id/dateSelection"
+        android:title="@string/datePickerLabel"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">A11-Futures</string>
+    <string name="datePickerLabel">Date</string>
+    <string name="meal_name_label">Name:</string>
+    <string name="meal_category_label">Category:</string>
+    <string name="meal_notes_label">Notes:</string>
+    <string name="no_item_selected_toast">No canteen selected. Select a canteen to load meals.</string>
+</resources>
