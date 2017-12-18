@@ -2,7 +2,7 @@ _This is an assignment to the class [Programmieren 3](https://hsro-inf-prg3.gith
 
 # Assignment 11: Futures - Android variant
 
-This assignment covers the more advanced multithreading topic _futures_ and _future chaining_.
+This assignment covers the more advanced multithreading topics _futures_ and _future chaining_.
 Futures are a feature of Java 8 and can be compared to the concept of _promises_ in JavaScript.
 
 The internet contains lots of good articles about `Future<>` and `CompletableFuture<>` in Java.
@@ -42,7 +42,7 @@ The following flow chart shows how to proceed:
 ### Retrieve the first page of canteens
 
 Use the method `getCanteens()` of the OpenMensaAPI to retrieve the fist page of canteens (without index).
-The method returns an object of `Response<List<Canteen>>`.
+The method returns an instance of `Response<List<Canteen>>`.
 That might be a little bit confusing but the OpenMensaAPI does not expose a dedicated pagination endpoint to retrieve the total count of items or the total count of pages but exposes this information in the response headers (`X-Total-Pages`, `X-Total-Count`, ...).
 To be able to extract this information you need the `Response<>` wrapper because the wrapper includes a reference to the headers.
 
@@ -61,7 +61,7 @@ _Side note: to keep the app as simple as possbile (well, actually it is not real
 ## Retrieve the meals of a day
 
 When a canteen was selected the meals for this canteen and the currently selected date (default today) should be retrieved.
-The `Spinner` class offers an `OnItemSelectedListener` interface which is already added to the `MainActivity`.
+The `Spinner` class offers an `OnItemSelectedListener` interface which is already added to the `MainActivity` class.
 To be able to access the selected canteen later on you have to save it to a `private` variable whenever the selection changes and the `onItemSelected(...)` method is called.
 
 When you have completed the handler (3 lines of code!) you are ready to fetch the meals by implementing the method `updateMeals()`.
