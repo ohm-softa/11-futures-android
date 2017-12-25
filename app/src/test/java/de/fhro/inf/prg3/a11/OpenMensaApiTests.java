@@ -13,6 +13,7 @@ import de.fhro.inf.prg3.a11.openmensa.OpenMensaAPIService;
 import de.fhro.inf.prg3.a11.openmensa.model.Canteen;
 import de.fhro.inf.prg3.a11.openmensa.model.PageInfo;
 import de.fhro.inf.prg3.a11.openmensa.model.State;
+import retrofit2.HttpException;
 import retrofit2.Response;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -65,10 +66,15 @@ public class OpenMensaApiTests {
     }
 
     @Test
-    void testGetMensaState() throws ExecutionException, InterruptedException {
-        State mensaState = openMensaAPI.getMensaState(FHRO_MENSA_ID, dateFormat.format(calendar.getTime())).get();
-
-        assertNotNull(mensaState);
+    void testGetCanteenState() throws InterruptedException {
+        try {
+            State mensaState = openMensaAPI.getCanteenState(FHRO_MENSA_ID, dateFormat.format(calendar.getTime())).get();
+            assertNotNull(mensaState);
+        }catch (ExecutionException e) {
+            if(e.getCause() instanceof HttpException) {
+                System.out.println(String.format("HTTP error: %s", e.getCause().getMessage()));
+            }
+        }
     }
 
     @Test
