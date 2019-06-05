@@ -10,23 +10,10 @@ For example [this one](http://www.deadcoderising.com/java8-writing-asynchronous-
 
 _This is the Android variant of the assignment. There's also an [CLI variant](https://github.com/ohm-softa/11-futures-cli) which covers the same concepts. **You don't have to implement both!** If you want to switch between them you should be able to copy most of the code you already wrote (except a few platform specifics)._
 
-## Setup
+## Retrofit and `CompletableFuture`s
 
-1. Create a fork of this repository (button in the right upper corner)
-2. Clone the project (get the link by clicking the green _Clone or download button_)
-3. Import the project to your **Android Studio**
-
-_Remark: the given unit tests won't succeed until you have completed the first part of this assignment as they require the `CompletableFuture<>` Call Adapter registered in Retrofit!_
-
-## Retrofit Call Adapter
-
-To be able to use the given `OpenMensaAPI` interface with Retrofit you have to do some extra work.
-Retrofit is able to return `CompletableFuture<>` but you have to register a [Call Adapter](https://github.com/square/retrofit/wiki/Call-Adapters) to enable this feature.
-
-To accomplish this you have to include another dependency in the `build.gradle`-file and register the adapter within the Retrofit builder (`.addCallAdapterFactory(...)`).
-
-To validate that the Call Adapter is registered correctly run the given unit tests.
-They're also a good starting point to get an idea how to use the API with `Future<>`s instead of the Retrofit specific `Call<>` objects.
+Inspect the interface `ohm.softa.a11.openmensa.OpenMensaAPI`.
+The method return types have been changed from `Call<>` to `CompletableFuture<>`, a built-in way to leverage asynchronous programming via futures.
 
 ## Retrieving all canteens
 
@@ -42,12 +29,9 @@ The following flow chart shows how to proceed:
 ### Retrieve the first page of canteens
 
 Use the method `getCanteens()` of the OpenMensaAPI to retrieve the fist page of canteens (without index).
-The method returns an instance of `Response<List<Canteen>>`.
+The future returns an instance of `Response<List<Canteen>>`.
 That might be a little bit confusing but the OpenMensaAPI does not expose a dedicated pagination endpoint to retrieve the total count of items or the total count of pages but exposes this information in the response headers (`X-Total-Pages`, `X-Total-Count`, ...).
 To be able to extract this information you need the `Response<>` wrapper because the wrapper includes a reference to the headers.
-
-### Extract the pagination information
-
 There's a given utility class `PageInfo` which extracts the pagination information from a generic `Response<>` object. To create a `PageInfo` instance use the static factory method `PageInfo.extractFromResponse(...)`.
 
 ### Retrieve the remaining pages
@@ -56,7 +40,7 @@ When you have the pagination information extracted you can retrieve the remainin
 As always there's not **one** solution but different ways to accomplish this!
 But no matter which approach you're chosing you have to collect all retrieved canteens in one list and pass this list to the `ArrayAdapter<>` instance `canteenAdapter` (e.g. in a `.thenAccept(...)`).
 
-_Side note: to keep the app as simple as possbile (well, actually it is not really simple, but we tried!) it does not contain a progressbar which shows if the canteens have been loaded or not so it might be a good idea to show a `Toast` when the initialization is complete._
+_Side note: to keep the app as simple as possible (well, actually it is not really simple, but we tried!) it does not contain a progressbar which shows if the canteens have been loaded or not so it might be a good idea to show a `Toast` when the initialization is complete._
 
 ## Retrieve the meals of a day
 
