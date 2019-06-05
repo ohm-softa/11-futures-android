@@ -1,4 +1,4 @@
-package de.fhro.inf.prg3.a11;
+package ohm.softa.a11;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
-import de.fhro.inf.prg3.a11.openmensa.OpenMensaAPI;
-import de.fhro.inf.prg3.a11.openmensa.OpenMensaAPIService;
-import de.fhro.inf.prg3.a11.openmensa.model.Canteen;
-import de.fhro.inf.prg3.a11.openmensa.model.PageInfo;
-import de.fhro.inf.prg3.a11.openmensa.model.State;
+import ohm.softa.a11.openmensa.OpenMensaAPI;
+import ohm.softa.a11.openmensa.OpenMensaAPIService;
+import ohm.softa.a11.openmensa.model.Canteen;
+import ohm.softa.a11.openmensa.model.PageInfo;
+import ohm.softa.a11.openmensa.model.State;
 import retrofit2.HttpException;
 import retrofit2.Response;
 

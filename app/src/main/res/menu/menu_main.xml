@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="de.fhro.inf.prg3.a11.MainActivity" >
+    tools:context="ohm.softa.a11.MainActivity" >
 
     <item
         android:id="@+id/dateSelection"

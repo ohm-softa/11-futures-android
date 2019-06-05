@@ -1,4 +1,4 @@
-package de.fhro.inf.prg3.a11;
+package ohm.softa.a11;
 
 import android.app.DatePickerDialog;
 import android.graphics.Color;
@@ -23,14 +23,13 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Locale;
 
-import de.fhro.inf.prg3.a11.openmensa.OpenMensaAPI;
-import de.fhro.inf.prg3.a11.openmensa.OpenMensaAPIService;
-import de.fhro.inf.prg3.a11.adapter.MealsRecyclerAdapter;
-import de.fhro.inf.prg3.a11.openmensa.model.Canteen;
-import de.fhro.inf.prg3.a11.openmensa.model.Meal;
+
+import ohm.softa.a11.openmensa.OpenMensaAPI;
+import ohm.softa.a11.openmensa.OpenMensaAPIService;
+import ohm.softa.a11.adapter.MealsRecyclerAdapter;
+import ohm.softa.a11.openmensa.model.Canteen;
 
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, AdapterView.OnItemSelectedListener {
 

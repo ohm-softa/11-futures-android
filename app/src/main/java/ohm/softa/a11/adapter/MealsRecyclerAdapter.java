@@ -1,7 +1,6 @@
-package de.fhro.inf.prg3.a11.adapter;
+package ohm.softa.a11.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +13,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import de.fhro.inf.prg3.a11.R;
-import de.fhro.inf.prg3.a11.openmensa.model.Meal;
+import ohm.softa.a11.R;
+import ohm.softa.a11.openmensa.model.Meal;
 
 /**
  * RecyclerView adapter to display meals

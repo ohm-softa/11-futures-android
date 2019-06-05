@@ -2,14 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: "de.mannodermaus.android-junit5"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "de.fhro.inf.prg3.a11"
-        minSdkVersion 24
-        targetSdkVersion 27
+        applicationId "ohm.softa.a11"
+        minSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArgument "runnerBuilder", "de.mannodermaus.junit5.AndroidJUnit5Builder"
     }
     buildTypes {
         release {
@@ -44,9 +45,14 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
 
     /* JUnit 5 */
-    testImplementation junit5.unitTests()
-    testCompileOnly junit5.unitTestsRuntime()
+    androidTestImplementation "androidx.test:runner:1.1.1"
 
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    /* JUnit 5 */
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${junit5_version}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit5_version}"
+
+    androidTestImplementation "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
+    androidTestImplementation "de.mannodermaus.junit5:android-test-core:1.0.0"
+    androidTestRuntimeOnly "de.mannodermaus.junit5:android-test-runner:1.0.0"
 }

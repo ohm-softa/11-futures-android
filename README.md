@@ -1,4 +1,4 @@
-_This is an assignment to the class [Programmieren 3](https://hsro-inf-prg3.github.io) at the [University of Applied Sciences Rosenheim](http://www.fh-rosenheim.de)._
+_This is an assignment to the class [Softwarearchitektur](https://ohm-softa.github.io) at the [Technische Hochschule Nürnberg](http://www.th-nuernberg.de)._
 
 # Assignment 11: Futures - Android variant
 
@@ -8,13 +8,13 @@ Futures are a feature of Java 8 and can be compared to the concept of _promises_
 The internet contains lots of good articles about `Future<>` and `CompletableFuture<>` in Java.
 For example [this one](http://www.deadcoderising.com/java8-writing-asynchronous-code-with-completablefuture/) covers everything you need to know for this assignment.
 
-_This is the Android variant of the assignment. There's also an [CLI variant](https://github.com/hsro-inf-prg3/11-futures-cli) which covers the same concepts. **You don't have to implement both!** If you want to switch between them you should be able to copy most of the code you already wrote (except a few platform adoptions)._
+_This is the Android variant of the assignment. There's also an [CLI variant](https://github.com/ohm-softa/11-futures-cli) which covers the same concepts. **You don't have to implement both!** If you want to switch between them you should be able to copy most of the code you already wrote (except a few platform specifics)._
 
 ## Setup
 
 1. Create a fork of this repository (button in the right upper corner)
-1. Clone the project (get the link by clicking the green _Clone or download button_)
-1. Import the project to your **Android Studio**
+2. Clone the project (get the link by clicking the green _Clone or download button_)
+3. Import the project to your **Android Studio**
 
 _Remark: the given unit tests won't succeed until you have completed the first part of this assignment as they require the `CompletableFuture<>` Call Adapter registered in Retrofit!_
 
